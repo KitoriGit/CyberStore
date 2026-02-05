@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "name": "Cyberpunk 2077",
+        "price": 60000,
+        "stock": 5,
+        "img": "https://m.media-amazon.com/images/I/81UOD2Xsi0L._AC_SL1500_.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Elden Ring",
+        "price": 85000,
+        "stock": 3,
+        "img": "https://image.api.playstation.com/vulcan/ap/rnd/202110/2000/phvVT0qZfcRms5qDAk0SI3CM.png"
+    },
+    {
+        "id": 3,
+        "name": "Minecraft",
+        "price": 25000,
+        "stock": 10,
+        "img": "https://image.api.playstation.com/vulcan/img/rnd/202010/2119/5sV8X7eXjJ0lA8XQx6U3zW0o.png"
+    },
+    {
+        "id": 4,
+        "name": "God of War Ragnarok",
+        "price": 75000,
+        "stock": 0,
+        "img": "https://image.api.playstation.com/vulcan/ap/rnd/202207/1210/4xJ8XB3bi888QTLZYdl7Oi0s.png"
+    }
+]
