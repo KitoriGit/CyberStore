@@ -4,27 +4,69 @@
         "name": "Cyberpunk 2077",
         "price": 60000,
         "stock": 5,
-        "img": "https://m.media-amazon.com/images/I/81UOD2Xsi0L._AC_SL1500_.jpg"
+        "img": "https://upload.wikimedia.org/wikipedia/en/9/9f/Cyberpunk_2077_box_art.jpg"
     },
     {
         "id": 2,
         "name": "Elden Ring",
         "price": 85000,
         "stock": 3,
-        "img": "https://image.api.playstation.com/vulcan/ap/rnd/202110/2000/phvVT0qZfcRms5qDAk0SI3CM.png"
+        "img": "https://assets.xboxservices.com/assets/7b/54/7b54f5e4-0857-4ce3-8a18-2b8c431e8a9e.jpg?n=Elden-Ring_GLP-Page-Hero-0_1083x1222_01.jpg"
     },
     {
         "id": 3,
         "name": "Minecraft",
         "price": 25000,
         "stock": 10,
-        "img": "https://image.api.playstation.com/vulcan/img/rnd/202010/2119/5sV8X7eXjJ0lA8XQx6U3zW0o.png"
+        "img": "https://preview.redd.it/4lv9qrcjjui71.jpg?width=640&crop=smart&auto=webp&s=b9f3331e7b92555ca53ec801c820415262cb3fb9"
     },
     {
         "id": 4,
-        "name": "God of War Ragnarok",
+        "name": "God of War Ragnarök",
         "price": 75000,
         "stock": 0,
-        "img": "https://image.api.playstation.com/vulcan/ap/rnd/202207/1210/4xJ8XB3bi888QTLZYdl7Oi0s.png"
+        "img": "https://upload.wikimedia.org/wikipedia/en/e/ee/God_of_War_Ragnar%C3%B6k_cover.jpg"
+    },
+    {
+        "id": 5,
+        "name": "The Legend of Zelda: Breath of the Wild",
+        "price": 60000,
+        "stock": 12,
+        "img": "https://upload.wikimedia.org/wikipedia/en/c/c6/The_Legend_of_Zelda_Breath_of_the_Wild.jpg"
+    },
+    {
+        "id": 6,
+        "name": "Red Dead Redemption 2",
+        "price": 45000,
+        "stock": 8,
+        "img": "https://upload.wikimedia.org/wikipedia/en/4/44/Red_Dead_Redemption_II.jpg"
+    },
+    {
+        "id": 7,
+        "name": "Super Mario Odyssey",
+        "price": 55000,
+        "stock": 6,
+        "img": "https://upload.wikimedia.org/wikipedia/en/8/8d/Super_Mario_Odyssey.jpg"
+    },
+    {
+        "id": 8,
+        "name": "Grand Theft Auto V",
+        "price": 30000,
+        "stock": 15,
+        "img": "https://upload.wikimedia.org/wikipedia/en/a/a5/Grand_Theft_Auto_V.png"
+    },
+    {
+        "id": 9,
+        "name": "Hollow Knight",
+        "price": 15000,
+        "stock": 20,
+        "img": "https://upload.wikimedia.org/wikipedia/en/0/04/Hollow_Knight_first_cover_art.webp"
+    },
+    {
+        "id": 10,
+        "name": "Spider-Man: Miles Morales",
+        "price": 50000,
+        "stock": 4,
+        "img": "https://image.api.playstation.com/vulcan/ap/rnd/202008/1420/HcLcfeQBXd2RiQaCeWQDCIFN.jpg?w=440"
     }
 ]

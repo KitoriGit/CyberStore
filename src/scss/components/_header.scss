@@ -1,0 +1,31 @@
+header {
+    height: 3rem;
+    padding: var(--space-sm);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .cartWidget {
+        position: relative;
+        margin-right: var(--space-sm);
+        cursor: pointer;
+        color: var(--primary-color);
+
+        #cartCount {
+            position: absolute;
+            top: -5px;
+            right: -11px;
+            background-color: var(--accent-color);
+            color: var(--text-inverse);
+            font-size: var(--text-sm);
+            font-weight: bold;
+            line-height: .9;
+            min-width: 1.2rem;
+            height: 1.2rem;
+            border-radius: var(--radius-full);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}

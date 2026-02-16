@@ -1,0 +1,51 @@
+:root {
+    /* 🎨 Paleta de Colores (Tema Cyberpunk) */
+    --primary-color: #00f3ff; // Cian Neón - Acción principal
+    --primary-light: #80f9ff; // Cian Neón Claro
+    --secondary-color: #fcee0a; // Amarillo Cyber - Destacados
+    --secondary-light: #fdf785; // Amarillo Cyber Claro
+    --accent-color: #ff003c; // Rojo Neón - Alertas/Ofertas
+    --accent-light: #ff809e; // Rojo Neón Claro
+    --success-color: #39ff14; // Verde Neón - Éxito/Confirmación
+    --success-light: #9cff8a; // Verde Neón Claro
+
+    --bg-body: #0b0b0b; // Fondo principal muy oscuro
+    --bg-card: #1a1a1a; // Fondo de elementos/tarjetas
+    --bg-input: #2a2a2a; // Fondo de inputs
+
+    --text-main: #e0e0e0; // Texto principal (casi blanco)
+    --text-muted: #a0a0a0; // Texto secundario (gris)
+    --text-inverse: #000000; // Texto sobre colores neón
+
+    /* 🔠 Tipografía */
+    --font-primary: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    --font-display: 'Orbitron', sans-serif; // Para títulos estilo futurista (opcional)
+
+    /* 📏 Tamaños de Fuente */
+    --text-xs: 0.75rem; // 12px
+    --text-sm: 0.875rem; // 14px
+    --text-base: 1rem; // 16px
+    --text-lg: 1.125rem; // 18px
+    --text-xl: 1.25rem; // 20px
+    --text-2xl: 1.5rem; // 24px
+    --text-3xl: 2rem; // 32px
+
+    /* 📐 Espaciados (Sistema base 4px) */
+    --space-xs: 0.25rem; // 4px
+    --space-sm: 0.5rem; // 8px
+    --space-md: 1rem; // 16px
+    --space-lg: 1.5rem; // 24px
+    --space-xl: 2rem; // 32px
+    --space-2xl: 3rem; // 48px
+
+    /* 🧱 UI & Bordes */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 16px;
+    --radius-full: 9999px;
+
+    /* 🎭 Efectos */
+    --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+    --shadow-neon: 0 0 10px rgba(0, 243, 255, 0.3);
+    --transition: all 0.3s ease-in-out;
+}

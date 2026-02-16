@@ -1,0 +1,159 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-primary);
+  font-size: var(--text-base);
+}
+
+body {
+  background-color: var(--bg-body);
+  color: var(--text-main);
+}
+
+:root {
+  /* 🎨 Paleta de Colores (Tema Cyberpunk) */
+  --primary-color: #00f3ff;
+  --primary-light: #80f9ff;
+  --secondary-color: #fcee0a;
+  --secondary-light: #fdf785;
+  --accent-color: #ff003c;
+  --accent-light: #ff809e;
+  --success-color: #39ff14;
+  --success-light: #9cff8a;
+  --bg-body: #0b0b0b;
+  --bg-card: #1a1a1a;
+  --bg-input: #2a2a2a;
+  --text-main: #e0e0e0;
+  --text-muted: #a0a0a0;
+  --text-inverse: #000000;
+  /* 🔠 Tipografía */
+  --font-primary: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-display: 'Orbitron', sans-serif;
+  /* 📏 Tamaños de Fuente */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 2rem;
+  /* 📐 Espaciados (Sistema base 4px) */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  /* 🧱 UI & Bordes */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+  /* 🎭 Efectos */
+  --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+  --shadow-neon: 0 0 10px rgba(0, 243, 255, 0.3);
+  --transition: all 0.3s ease-in-out;
+}
+
+header {
+  height: 3rem;
+  padding: var(--space-sm);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .cartWidget {
+  position: relative;
+  margin-right: var(--space-sm);
+  cursor: pointer;
+  color: var(--primary-color);
+}
+header .cartWidget #cartCount {
+  position: absolute;
+  top: -5px;
+  right: -11px;
+  background-color: var(--accent-color);
+  color: var(--text-inverse);
+  font-size: var(--text-sm);
+  font-weight: bold;
+  line-height: 0.9;
+  min-width: 1.2rem;
+  height: 1.2rem;
+  border-radius: var(--radius-full);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#gameList {
+  height: calc(100vh - 3rem);
+  overflow-y: auto;
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: var(--space-md);
+}
+#gameList .item {
+  height: 15vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#gameList .item img {
+  height: 100%;
+  width: 25vw;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#gameList .item .gameInfo {
+  background-color: var(--bg-card);
+  height: 100%;
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: 6fr 4fr;
+  grid-template-rows: 3fr 2fr 5fr;
+  grid-template-areas: "title title" "quantity quantity" "price add";
+}
+#gameList .item .gameInfo > *:not(.addContainer) {
+  padding: var(--space-sm);
+}
+#gameList .item .gameInfo .gameTitle {
+  grid-area: title;
+  font-size: var(--text-2xl);
+  padding-bottom: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#gameList .item .gameInfo .quantity {
+  grid-area: quantity;
+  margin-bottom: auto;
+  padding-top: 0;
+}
+#gameList .item .gameInfo .price {
+  grid-area: price;
+  font-size: var(--text-2xl);
+  color: var(--success-color);
+  margin-top: auto;
+}
+#gameList .item .gameInfo button {
+  grid-area: add;
+  width: 100%;
+  flex-grow: 1;
+  border: none;
+}
+#gameList .item .gameInfo .stock {
+  background-color: var(--success-light);
+}
+#gameList .item .gameInfo .noStock {
+  background-color: var(--accent-light);
+  color: var(--accent-color);
+  font-weight: bold;
+  cursor: not-allowed;
+  pointer-events: none;
+}/*# sourceMappingURL=main.css.map */

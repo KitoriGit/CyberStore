@@ -1,0 +1,85 @@
+#gameList {
+    height: calc(100vh - 3rem);
+    overflow-y: auto;
+    padding: var(--space-md);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: var(--space-md);
+
+
+    .item {
+        height: 15vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            height: 100%;
+            width: 25vw;
+            object-fit: cover;
+        }
+
+        .gameInfo {
+            background-color: var(--bg-card);
+            height: 100%;
+            // padding: var(--space-sm);
+            flex-grow: 1;
+            display: grid;
+            grid-template-columns: 6fr 4fr;
+            grid-template-rows: 3fr 2fr 5fr;
+            grid-template-areas:
+                "title title"
+                "quantity quantity"
+                "price add";
+
+            >*:not(.addContainer) {
+                padding: var(--space-sm);
+            }
+
+            .gameTitle {
+                grid-area: title;
+                font-size: var(--text-2xl);
+                padding-bottom: 0;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .quantity {
+                grid-area: quantity;
+                margin-bottom: auto;
+                padding-top: 0;
+            }
+
+            .price {
+                grid-area: price;
+                font-size: var(--text-2xl);
+                color: var(--success-color);
+                margin-top: auto;
+            }
+
+
+            button {
+                grid-area: add;
+                width: 100%;
+                flex-grow: 1;
+                border: none;
+            }
+
+            .stock {
+                background-color: var(--success-light);
+            }
+
+            .noStock {
+                background-color: var(--accent-light);
+                color: var(--accent-color);
+                font-weight: bold;
+                cursor: not-allowed;
+                pointer-events: none;
+            }
+        }
+    }
+}
