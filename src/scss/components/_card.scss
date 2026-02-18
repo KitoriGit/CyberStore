@@ -11,10 +11,15 @@
 
     .item {
         height: 15vh;
+        min-height: 15vh;
         width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
+        border: 1px solid #eee;
+        border-radius: var(--radius-md);
+        overflow: hidden;
+        box-shadow: 3px 3px 8px var(--accent-color);
 
         img {
             height: 100%;
@@ -25,7 +30,6 @@
         .gameInfo {
             background-color: var(--bg-card);
             height: 100%;
-            // padding: var(--space-sm);
             flex-grow: 1;
             display: grid;
             grid-template-columns: 6fr 4fr;
@@ -70,12 +74,15 @@
             }
 
             .stock {
-                background-color: var(--success-light);
+                background-color: var(--secondary-color);
+                color: var(--text-inverse);
+                font-weight: bold;
+                cursor: pointer;
             }
 
             .noStock {
-                background-color: var(--accent-light);
-                color: var(--accent-color);
+                background-color: var(--text-muted);
+                color: var(--text-inverse);
                 font-weight: bold;
                 cursor: not-allowed;
                 pointer-events: none;

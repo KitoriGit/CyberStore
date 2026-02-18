@@ -1,3 +1,6 @@
+import { priceFormat } from "../utils/formatters.js";
+
+
 export const renderCard = (game) => {
     const { id, title, price, quantity, image } = game;
     let cardTemplate = "";
@@ -8,8 +11,8 @@ export const renderCard = (game) => {
                 <img src="${image}" alt="" srcset="">
                 <div class="gameInfo">
                     <strong class="gameTitle">${title}</strong>
-                    <span class="quantity">${quantity}</span>
-                    <span class="price">$${price}</span>
+                    <span class="quantity">stock: ${quantity}</span>
+                    <span class="price">${priceFormat(price)}</span>
                     <button class="addBtn stock">Agregar</button>
                 </div>
             </li>
@@ -20,8 +23,8 @@ export const renderCard = (game) => {
                 <img src="${image}" alt="" srcset="">
                 <div class="gameInfo">
                     <strong class="gameTitle">${title}</strong>
-                    <span class="quantity">${quantity}</span>
-                    <span class="price">$${price}</span>
+                    <span class="quantity">stock: ${quantity}</span>
+                    <span class="price">${priceFormat(price)}</span>
                     <button class="addBtn noStock">No hay stock</button>
                 </div>
             </li>

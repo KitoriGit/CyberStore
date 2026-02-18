@@ -1,6 +1,7 @@
 import { renderCard } from "./components/ProductCard.js";
 import { fetchProducts } from "./services/api.js";
 import { print } from "./router/router.js";
+import { showToast } from "./utils/toast.js";
 
 //-------------- CLASES -------------------------------------
 class item {
@@ -21,6 +22,10 @@ class Cart {
     getTotal() {
         return this.items.reduce((acc, item) => acc + (item.price * item.quantity), 0);
     }
+
+    getLength() {
+        return this.items.reduce((acc, item) => acc + item.quantity, 0);
+    }
 }
 
 
@@ -36,7 +41,9 @@ cart = JSON.parse(localStorage.getItem('cart')) || cart;
 let url = window.location.pathname;
 print(url);
 
+
 //---------------- FUNCIONES --------------------------------------
+const app = document.getElementById("app");
 const cartCounter = document.getElementById("cartCount");
 cartCounter.innerHTML = cart.items.length;
 
@@ -46,28 +53,42 @@ const updateQuantity = (id, itemCard) => {
             e.quantity--;
         }
     });
-    itemCard.innerHTML = renderCard(inventory.find(game => game.id == id));
-    cartCounter.innerHTML = cart.items.length;
-
+    itemCard.outerHTML = renderCard(inventory.find(game => game.id == id));
+    cartCounter.innerHTML = cart.getLength();
 };
 
-const app = document.getElementById("app");
+const getToCart = (game) => {
+    const cartItem = new item(game.id, game.title, game.price, 1, game.image)
+
+    if (cart.items.find((e) => e.id == game.id)) {
+        cart.items[cart.items.findIndex((e) => e.id == game.id)].quantity++;
+    } else {
+        cart.items.push(cartItem);
+    }
+
+}
 
 app.addEventListener("click", async (e) => {
     if (e.target.classList.contains("addBtn")) {
         const li = e.target.closest('.item');
         const id = li.dataset.id;
         const game = inventory.find(game => game.id == id);
-        if (game.quantity > 0) {
-            cart.items.push(game);
-            // console.log(game);
-            console.log(cart);
-            // console.log(cart.items.length);
-            updateQuantity(id, li);
-        } else {
-        }
+        getToCart(game);
+
+        updateQuantity(id, li);
+        showToast(`¡${game.title} agregado al carrito!`);
     }
 });
 
 
-//---------------- START -----------------------------------------
+//---------------- CAMBIO DE PAGE -----------------------------------------
+const cartIcon = document.querySelector(".cartWidget");
+cartIcon.addEventListener("click", () => {
+    window.history.pushState({}, "", "/cart");
+    let url = window.location.pathname;
+    print(url);
+});
+
+window.addEventListener("popstate", () => {
+    print(window.location.pathname);
+});

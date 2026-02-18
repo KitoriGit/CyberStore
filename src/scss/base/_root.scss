@@ -1,13 +1,18 @@
 :root {
     /* 🎨 Paleta de Colores (Tema Cyberpunk) */
-    --primary-color: #00f3ff; // Cian Neón - Acción principal
-    --primary-light: #80f9ff; // Cian Neón Claro
-    --secondary-color: #fcee0a; // Amarillo Cyber - Destacados
-    --secondary-light: #fdf785; // Amarillo Cyber Claro
-    --accent-color: #ff003c; // Rojo Neón - Alertas/Ofertas
-    --accent-light: #ff809e; // Rojo Neón Claro
-    --success-color: #39ff14; // Verde Neón - Éxito/Confirmación
-    --success-light: #9cff8a; // Verde Neón Claro
+    --primary-color: #8a2be2; // Violeta Neón - Acción principal
+    --primary-light: #c48ef5; // Violeta Claro
+    --secondary-color: #00e5ff; // Cian Eléctrico - Destacados
+    --secondary-light: #80f2ff; // Cian Claro
+    --accent-color: #ff0080; // Magenta Neón - Detalles
+    --accent-light: #ff80bf; // Magenta Claro
+
+    --success-color: #00ff9d; // Verde Menta - Éxito
+    --success-light: #80ffce; // Verde Menta Claro
+    --warning-color: #ffea00; // Amarillo - Advertencia
+    --warning-light: #fff580; // Amarillo Claro
+    --error-color: #ff2a2a; // Rojo - Error
+    --error-light: #ff9595; // Rojo Claro
 
     --bg-body: #0b0b0b; // Fondo principal muy oscuro
     --bg-card: #1a1a1a; // Fondo de elementos/tarjetas

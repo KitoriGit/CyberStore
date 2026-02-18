@@ -1,4 +1,5 @@
 import { renderHome } from "../pages/Home.js";
+import { renderCart } from "../pages/cart.js";
 
 export const print = (path) => {
     switch (path) {

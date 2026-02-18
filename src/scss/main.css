@@ -14,14 +14,18 @@ body {
 
 :root {
   /* 🎨 Paleta de Colores (Tema Cyberpunk) */
-  --primary-color: #00f3ff;
-  --primary-light: #80f9ff;
-  --secondary-color: #fcee0a;
-  --secondary-light: #fdf785;
-  --accent-color: #ff003c;
-  --accent-light: #ff809e;
-  --success-color: #39ff14;
-  --success-light: #9cff8a;
+  --primary-color: #8a2be2;
+  --primary-light: #c48ef5;
+  --secondary-color: #00e5ff;
+  --secondary-light: #80f2ff;
+  --accent-color: #ff0080;
+  --accent-light: #ff80bf;
+  --success-color: #00ff9d;
+  --success-light: #80ffce;
+  --warning-color: #ffea00;
+  --warning-light: #fff580;
+  --error-color: #ff2a2a;
+  --error-light: #ff9595;
   --bg-body: #0b0b0b;
   --bg-card: #1a1a1a;
   --bg-input: #2a2a2a;
@@ -99,10 +103,15 @@ header .cartWidget #cartCount {
 }
 #gameList .item {
   height: 15vh;
+  min-height: 15vh;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  border: 1px solid #eee;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: 3px 3px 8px var(--accent-color);
 }
 #gameList .item img {
   height: 100%;
@@ -148,11 +157,14 @@ header .cartWidget #cartCount {
   border: none;
 }
 #gameList .item .gameInfo .stock {
-  background-color: var(--success-light);
+  background-color: var(--secondary-color);
+  color: var(--text-inverse);
+  font-weight: bold;
+  cursor: pointer;
 }
 #gameList .item .gameInfo .noStock {
-  background-color: var(--accent-light);
-  color: var(--accent-color);
+  background-color: var(--text-muted);
+  color: var(--text-inverse);
   font-weight: bold;
   cursor: not-allowed;
   pointer-events: none;
