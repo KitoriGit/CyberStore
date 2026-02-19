@@ -5,7 +5,7 @@ export const renderHeader = () => {
         <header>
             <strong>Cyber Store - Videojuegos</strong>
             <div class="cartWidget">
-                <i data-lucide="shopping-cart"></i>
+                <i class="cartIcon" data-lucide="shopping-cart"></i>
                 <span id="cartCount">${cart.getLength()}</span>
             </div>
         </header>

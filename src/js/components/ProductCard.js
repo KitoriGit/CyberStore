@@ -33,3 +33,28 @@ export const renderCard = (game) => {
 
     return cardTemplate;
 }
+
+export const renderCartCard = (game) => {
+    const { id, title, price, quantity, image } = game;
+    let cardTemplate = "";
+
+    cardTemplate = `
+        <li class="cartItem" data-id="${id}">
+            <img src="${image}" alt="" srcset="">
+            <div class="gameInfo">
+                <strong class="gameTitle">${title}</strong>
+                <span class="price">${priceFormat(price)}</span>
+                <div class="gameCounter">
+                    <div class="counter">
+                        <button class="decrease-btn">-</button>
+                        <span>${quantity}</span>
+                        <button class="increase-btn">+</button>
+                    </div>
+                    <i data-lucide="trash-2"></i>
+                </div>
+            </div>
+        </li>
+    `
+
+    return cardTemplate;
+}

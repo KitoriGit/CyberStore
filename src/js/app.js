@@ -1,7 +1,7 @@
 import { renderCard } from "./components/ProductCard.js";
 import { fetchProducts } from "./services/api.js";
 import { print } from "./router/router.js";
-import { showToast } from "./utils/toast.js";
+import { showToastSucces, showToastError } from "./utils/toast.js";
 
 //-------------- CLASES -------------------------------------
 class item {
@@ -26,6 +26,28 @@ class Cart {
     getLength() {
         return this.items.reduce((acc, item) => acc + item.quantity, 0);
     }
+
+    increase(id) {
+        const stock = inventory.find(e => e.id == id).quantity;
+        if (stock > 0) {
+            this.items.find(e => e.id == id).quantity++;
+            inventory.find(e => e.id == id).quantity--;
+        } else {
+            showToastError(`${inventory.find(e => e.id == id).title} sin stock.`)
+        }
+    };
+    decrease(id) {
+        this.items.find(e => e.id == id).quantity--;
+        inventory.find(e => e.id == id).quantity++;
+    };
+    remove(id) {
+        const quantity = this.items.find(e => e.id == id).quantity;
+        inventory.find(e => e.id == id).quantity += quantity;
+        this.items = this.items.filter(e => e.id != id);
+    };
+    clear() {
+        this.items = [];
+    };
 }
 
 
@@ -68,25 +90,46 @@ const getToCart = (game) => {
 
 }
 
-app.addEventListener("click", async (e) => {
-    if (e.target.classList.contains("addBtn")) {
+//---------------- EVENTOS UNIFICADOS (DELEGACIÓN) ------------------
+app.addEventListener("click", (e) => {
+    // 1. Widget del Carrito (Header) -> Navegación
+    if (e.target.closest(".cartWidget")) {
+        window.history.pushState({}, "", "/cart");
+        print(window.location.pathname);
+        return;
+    }
+
+    // 2. Botón "Agregar" (Home/Catálogo) -> Lógica de compra
+    if (e.target.classList.contains("addBtn") && !e.target.classList.contains("noStock")) {
         const li = e.target.closest('.item');
         const id = li.dataset.id;
         const game = inventory.find(game => game.id == id);
         getToCart(game);
-
         updateQuantity(id, li);
-        showToast(`¡${game.title} agregado al carrito!`);
+        showToastSucces(`¡${game.title} agregado al carrito!`);
+        return;
     }
-});
 
+    // 3. Botones de Cantidad (Vista Carrito)
+    if (e.target.classList.contains("increase-btn")) {
+        const id = e.target.closest('.cartItem').dataset.id;
+        cart.increase(id);
+        print(window.location.pathname); // Re-renderizamos el carrito
+    }
 
-//---------------- CAMBIO DE PAGE -----------------------------------------
-const cartIcon = document.querySelector(".cartWidget");
-cartIcon.addEventListener("click", () => {
-    window.history.pushState({}, "", "/cart");
-    let url = window.location.pathname;
-    print(url);
+    if (e.target.classList.contains("decrease-btn")) {
+        const id = e.target.closest('.cartItem').dataset.id;
+        cart.decrease(id);
+        print(window.location.pathname); // Re-renderizamos el carrito
+    }
+
+    if (e.target.classList.contains("lucide-trash-2")) {
+        console.log("entro")
+        const id = e.target.closest('.cartItem').dataset.id;
+        console.log(id)
+        cart.remove(id);
+        print(window.location.pathname); // Re-renderizamos el carrito
+    }
 });
 
 window.addEventListener("popstate", () => {

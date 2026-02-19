@@ -46,7 +46,8 @@
             .gameTitle {
                 grid-area: title;
                 font-size: var(--text-2xl);
-                padding-bottom: 0;
+                padding-bottom: 4px;
+                line-height: 1.2;
                 white-space: nowrap;
                 overflow: hidden;
                 text-overflow: ellipsis;
@@ -86,6 +87,89 @@
                 font-weight: bold;
                 cursor: not-allowed;
                 pointer-events: none;
+            }
+        }
+    }
+
+    .cartItem {
+        height: 15vh;
+        min-height: 15vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid #eee;
+        border-radius: var(--radius-md);
+        overflow: hidden;
+        box-shadow: 3px 3px 8px var(--accent-color);
+
+        img {
+            height: 100%;
+            width: 25vw;
+            object-fit: cover;
+        }
+
+        .gameInfo {
+            background-color: var(--bg-card);
+            height: 100%;
+            flex-grow: 1;
+            display: grid;
+            padding: var(--space-sm);
+            grid-template-rows: 3fr 2fr 5fr;
+            grid-template-areas:
+                "title"
+                "price"
+                "counter";
+
+            .gameTitle {
+                grid-area: title;
+                font-size: var(--text-2xl);
+                padding-bottom: 4px;
+                line-height: 1.2;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                align-items: center;
+            }
+
+            .price {
+                grid-area: price;
+                font-size: var(--text-2xl);
+                color: var(--success-color);
+                margin-top: auto;
+            }
+
+            .gameCounter {
+                grid-area: counter;
+                height: 100%;
+                display: flex;
+                justify-content: flex-end;
+                align-items: end;
+                margin-bottom: auto;
+                padding-top: 0;
+                gap: var(--space-sm);
+
+                >* {
+                    height: 50%;
+                }
+
+                .counter {
+                    background-color: var(--bg-input);
+                    color: var(--text-main);
+                    width: 50%;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    border-radius: var(--radius-md);
+                    overflow: hidden;
+
+                    button {
+                        height: 100%;
+                        width: var(--space-xl);
+                        background-color: var(--secondary-color);
+                        border: none;
+                    }
+                }
             }
         }
     }
