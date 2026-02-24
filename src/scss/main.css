@@ -12,6 +12,13 @@ body {
   color: var(--text-main);
 }
 
+#app {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 :root {
   /* 🎨 Paleta de Colores (Tema Cyberpunk) */
   --primary-color: #8a2be2;
@@ -170,7 +177,18 @@ header .cartWidget #cartCount {
   cursor: not-allowed;
   pointer-events: none;
 }
-#gameList .cartItem {
+
+#cartList {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: var(--space-md);
+}
+#cartList .cartItem {
   height: 15vh;
   min-height: 15vh;
   width: 100%;
@@ -182,13 +200,13 @@ header .cartWidget #cartCount {
   overflow: hidden;
   box-shadow: 3px 3px 8px var(--accent-color);
 }
-#gameList .cartItem img {
+#cartList .cartItem img {
   height: 100%;
   width: 25vw;
   -o-object-fit: cover;
      object-fit: cover;
 }
-#gameList .cartItem .gameInfo {
+#cartList .cartItem .gameInfo {
   background-color: var(--bg-card);
   height: 100%;
   flex-grow: 1;
@@ -197,7 +215,7 @@ header .cartWidget #cartCount {
   grid-template-rows: 3fr 2fr 5fr;
   grid-template-areas: "title" "price" "counter";
 }
-#gameList .cartItem .gameInfo .gameTitle {
+#cartList .cartItem .gameInfo .gameTitle {
   grid-area: title;
   font-size: var(--text-2xl);
   padding-bottom: 4px;
@@ -207,13 +225,13 @@ header .cartWidget #cartCount {
   text-overflow: ellipsis;
   align-items: center;
 }
-#gameList .cartItem .gameInfo .price {
+#cartList .cartItem .gameInfo .price {
   grid-area: price;
   font-size: var(--text-2xl);
   color: var(--success-color);
   margin-top: auto;
 }
-#gameList .cartItem .gameInfo .gameCounter {
+#cartList .cartItem .gameInfo .gameCounter {
   grid-area: counter;
   height: 100%;
   display: flex;
@@ -223,10 +241,10 @@ header .cartWidget #cartCount {
   padding-top: 0;
   gap: var(--space-sm);
 }
-#gameList .cartItem .gameInfo .gameCounter > * {
+#cartList .cartItem .gameInfo .gameCounter > * {
   height: 50%;
 }
-#gameList .cartItem .gameInfo .gameCounter .counter {
+#cartList .cartItem .gameInfo .gameCounter .counter {
   background-color: var(--bg-input);
   color: var(--text-main);
   width: 50%;
@@ -236,9 +254,19 @@ header .cartWidget #cartCount {
   border-radius: var(--radius-md);
   overflow: hidden;
 }
-#gameList .cartItem .gameInfo .gameCounter .counter button {
+#cartList .cartItem .gameInfo .gameCounter .counter button {
   height: 100%;
   width: var(--space-xl);
   background-color: var(--secondary-color);
   border: none;
+}
+
+#totalCounter {
+  padding: var(--space-sm);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#totalCounter span {
+  font-size: var(--text-2xl);
 }/*# sourceMappingURL=main.css.map */

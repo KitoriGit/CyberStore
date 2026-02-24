@@ -50,7 +50,7 @@ export const renderCartCard = (game) => {
                         <span>${quantity}</span>
                         <button class="increase-btn">+</button>
                     </div>
-                    <i data-lucide="trash-2"></i>
+                    <i class="remove-btn" data-lucide="trash-2"></i>
                 </div>
             </div>
         </li>

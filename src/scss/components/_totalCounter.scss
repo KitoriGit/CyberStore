@@ -1,0 +1,10 @@
+#totalCounter {
+    padding: var(--space-sm);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    span {
+        font-size: var(--text-2xl);
+    }
+}

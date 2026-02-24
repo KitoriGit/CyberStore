@@ -91,6 +91,19 @@
         }
     }
 
+
+}
+
+#cartList {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: var(--space-md);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: var(--space-md);
+
     .cartItem {
         height: 15vh;
         min-height: 15vh;

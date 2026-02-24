@@ -2,6 +2,8 @@ import { renderCard } from "./components/ProductCard.js";
 import { fetchProducts } from "./services/api.js";
 import { print } from "./router/router.js";
 import { showToastSucces, showToastError } from "./utils/toast.js";
+import { priceFormat } from "./utils/formatters.js";
+
 
 //-------------- CLASES -------------------------------------
 class item {
@@ -20,7 +22,7 @@ class Cart {
     }
 
     getTotal() {
-        return this.items.reduce((acc, item) => acc + (item.price * item.quantity), 0);
+        return priceFormat(this.items.reduce((acc, item) => acc + (item.price * item.quantity), 0));
     }
 
     getLength() {
@@ -37,8 +39,13 @@ class Cart {
         }
     };
     decrease(id) {
-        this.items.find(e => e.id == id).quantity--;
-        inventory.find(e => e.id == id).quantity++;
+        const cartItemQuant = cart.items.find(e => e.id == id).quantity;
+        if (cartItemQuant > 1) {
+            this.items.find(e => e.id == id).quantity--;
+            inventory.find(e => e.id == id).quantity++;
+        } else {
+            this.remove(id);
+        }
     };
     remove(id) {
         const quantity = this.items.find(e => e.id == id).quantity;
@@ -66,8 +73,6 @@ print(url);
 
 //---------------- FUNCIONES --------------------------------------
 const app = document.getElementById("app");
-const cartCounter = document.getElementById("cartCount");
-cartCounter.innerHTML = cart.items.length;
 
 const updateQuantity = (id, itemCard) => {
     inventory.forEach(e => {
@@ -76,7 +81,7 @@ const updateQuantity = (id, itemCard) => {
         }
     });
     itemCard.outerHTML = renderCard(inventory.find(game => game.id == id));
-    cartCounter.innerHTML = cart.getLength();
+    document.getElementById("cartCount").innerHTML = cart.getLength();
 };
 
 const getToCart = (game) => {
@@ -87,7 +92,6 @@ const getToCart = (game) => {
     } else {
         cart.items.push(cartItem);
     }
-
 }
 
 //---------------- EVENTOS UNIFICADOS (DELEGACIÓN) ------------------
