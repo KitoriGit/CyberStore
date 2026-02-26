@@ -15,7 +15,8 @@ export const renderCart = () => {
             <div id="totalCounter">
                 <span>Total:</span>
                 <span>${cart.getTotal()}</span>
-            </div>`;
+            </div>
+            <button id="checkoutBtn" class="checkout-btn">Comprar</button>`;
     } else {
         app.innerHTML = `${header}<h1 class="emptyCartTitle">No hay productos en el carrito</h1>`;
     }

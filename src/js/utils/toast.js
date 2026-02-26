@@ -31,3 +31,20 @@ export const showToastError = (message) => {
         },
     }).showToast();
 }
+
+export const showToastWarning = (message) => {
+    Toastify({
+        text: message,
+        duration: 3000,
+        gravity: "bottom",
+        position: "left",
+        stopOnFocus: true,
+        style: {
+            background: "#f39c12", // Amarillo advertencia
+            color: "#000000",
+            fontWeight: "bold",
+            borderRadius: "8px",
+            boxShadow: "0 0 10px rgba(243, 156, 18, 0.5)"
+        },
+    }).showToast();
+}
